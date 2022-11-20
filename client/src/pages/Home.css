@@ -1,0 +1,41 @@
+.home_container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+.home_container > h1 {
+  font-size:3rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  text-align: center;
+}
+.main_dash {
+  width: 60%;
+  height: 60%;
+  background-color: var(--light-color);
+  border-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.organization {
+  width: 10rem;
+  height: 5rem;
+  background-color: var(--secondary-color);
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+.organization a {
+  text-decoration: none;
+  color: var(--light-color);
+  font-size: 0.8rem;
+}
