@@ -25,3 +25,12 @@ export const registerUser = async (name, org, email, password) => {
     alert(error.response.data.message);
   }
 };
+
+// auth api
+export const authUser = async () => {
+  try {
+    return await axios.get("/api/v1/user/auth");
+  } catch (error) {
+    alert(error.response.data.message);
+  }
+};
