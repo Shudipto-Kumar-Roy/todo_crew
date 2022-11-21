@@ -32,8 +32,8 @@ app.use(express.static(path.join(__dirname, "./client/build")));
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./client/build/index.html"));
 });
-// end of For hosting
 
+// end of For hosting
 app.listen(PORT, () => {
   console.log(`Server is listening on http://localhost:${PORT}`);
 });
