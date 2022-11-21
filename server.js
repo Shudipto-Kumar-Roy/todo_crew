@@ -10,7 +10,7 @@ const connectToDatabase = require("./config/database");
 
 // setting environment variable
 if (process.env.NODE_ENV !== "PRODUCTION") {
-  require("dotenv").config({ path: "server/config/config.env" });
+  require("dotenv").config({ path: "config/config.env" });
 }
 // creating app
 const app = express();
@@ -28,9 +28,9 @@ app.use("/api/v1/user", userRoute);
 app.use("/api/v1/todo", todoRoute);
 
 // For hosting
-app.use(express.static(path.join(__dirname, "../client/build")));
+app.use(express.static(path.join(__dirname, "./client/build")));
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/build/index.html"));
+  res.sendFile(path.resolve(__dirname, "./client/build/index.html"));
 });
 // end of For hosting
 
