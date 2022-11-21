@@ -1,0 +1,192 @@
+.todo_container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+.todo_container h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  text-align: center;
+}
+.todo_form {
+  width: 70%;
+  height: auto;
+  background-color: var(--light-color);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.todo_form .todo_info {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo_form .todo_main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  align-items: center;
+}
+.todo_input_group {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+.todo_input_group input {
+  font-size: 1rem;
+  width: 65%;
+  height: 100%;
+  padding: 0.3rem 0.8rem;
+  outline: none;
+  border: none;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  color: var(--dark-color);
+}
+.todo_input_group label {
+  font-size: 1rem;
+  width: 35%;
+  height: 100%;
+  padding: 0.3rem 0.8rem;
+  background-color: var(--secondary-color);
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  color: var(--light-color);
+}
+.todo_input_group > button {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--light-color);
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.todo_today {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  background-color: var(--secondary-color);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 1rem;
+}
+.todo_today h4 {
+  font-size: 1rem;
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+.todo_tomorrow {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  background-color: var(--secondary-color);
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 1rem;
+  align-items: center;
+}
+.todo_tomorrow h4 {
+  font-size: 1rem;
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+.todo_form > button {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--light-color);
+  padding: 0.5rem 1rem;
+  background-color: var(--secondary-color);
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 980px) {
+  .todo_container {
+    width: 100vw;
+    height: auto;
+    padding: 2rem 0;
+  }
+  .todo_container h1 {
+    font-size: 2rem;
+  }
+  .todo_form .todo_main {
+    flex-direction: column;
+  }
+  .todo_form .todo_info {
+    width: 100%;
+  }
+  .todo_today {
+    width: 100%;
+  }
+  .todo_tomorrow {
+    width: 100%;
+  }
+  .todo_input_group input {
+    font-size: 0.8rem;
+    width: 65%;
+    height: 100%;
+    padding: 0.3rem 0.8rem;
+    outline: none;
+    border: none;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    color: var(--dark-color);
+  }
+  .todo_input_group label {
+    font-size: 0.8rem;
+    width: 35%;
+    height: 100%;
+    padding: 0.3rem 0.8rem;
+    background-color: var(--secondary-color);
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    color: var(--light-color);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .todo_container {
+    width: 100vw;
+    height: auto;
+  }
+  .todo_form {
+    width: 90%;
+  }
+
+  .todo_input_group input {
+    font-size: 0.8rem;
+    width: 55%;
+    height: 100%;
+    padding: 0.3rem 0.5rem;
+  }
+  .todo_input_group label {
+    font-size: 0.8rem;
+    width: 45%;
+    height: 100%;
+    padding: 0.3rem 0.5rem;
+  }
+}

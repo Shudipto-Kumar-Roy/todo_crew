@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 
 // internal import
 const userRoute = require("./routes/userRoute");
+const todoRoute = require("./routes/todoRoute");
 const connectToDatabase = require("./config/database");
 
 // setting environment variable
@@ -24,6 +25,7 @@ app.use(cookieParser());
 
 // setting route
 app.use("/api/v1/user", userRoute);
+app.use("/api/v1/todo", todoRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on http://localhost:${PORT}`);

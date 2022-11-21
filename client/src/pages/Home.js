@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import { authUser } from "../API";
+import { authUser, getTodo } from "../API";
 const organizations = ["CREW", "Weero", "Weepoka", "BTL", "Circle"];
 const Home = () => {
   const [isAuth, setIsAuth] = useState(false);
+  const [todos, setTodos] = useState([]);
   useEffect(() => {
     const getAuthData = async () => {
       const res = await authUser(); // api call
@@ -14,7 +15,17 @@ const Home = () => {
     };
     getAuthData();
   }, []);
-  
+
+  useEffect(() => {
+    const getAllTodos = async () => {
+      const res = await getTodo(); // api call
+      if (res && res.status === 200) {
+        setTodos((preVal) => [...preVal, ...res.data.todos]);
+      }
+    };
+    getAllTodos();
+  }, []);
+
   return (
     <div className="home_container">
       <h1>Todo Crew</h1>
@@ -28,6 +39,14 @@ const Home = () => {
                 </Link>
               </div>
             );
+          })}
+      </div>
+      <div className="show_todos">
+        {todos &&
+          todos.map((todo, index) => {
+            return <div key={index} className="card_body">
+              
+            </div>;
           })}
       </div>
     </div>

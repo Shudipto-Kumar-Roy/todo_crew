@@ -8,14 +8,15 @@
   background-color: var(--primary-color);
 }
 .home_container > h1 {
-  font-size:3rem;
+  font-size: 3rem;
   font-weight: 600;
   color: var(--secondary-color);
   text-align: center;
 }
 .main_dash {
-  width: 60%;
-  height: 60%;
+  width: 90%;
+  height: 20%;
+  max-height: auto;
   background-color: var(--light-color);
   border-radius: 1rem;
   display: flex;
@@ -38,4 +39,32 @@
   text-decoration: none;
   color: var(--light-color);
   font-size: 0.8rem;
+}
+
+/* show todos */
+.show_todos {
+  width: 90%;
+  height: 60%;
+  max-height: auto;
+  margin-top: 2rem;
+  background-color: var(--light-color);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+.card_body {
+  width: 40%;
+  height: 90%;
+  background-color: var(--primary-color);
+  margin: 0 1rem;
+}
+@media only screen and (max-width: 980px) {
+  .home_container {
+    height: auto;
+    min-height: 100vh;
+  }
+}
+@media only screen and (max-width: 600px) {
 }
