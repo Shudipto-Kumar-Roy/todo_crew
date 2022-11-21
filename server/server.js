@@ -1,7 +1,7 @@
 // external import
 const express = require("express");
-const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
+const path = require("path");
 
 // internal import
 const userRoute = require("./routes/userRoute");
@@ -10,7 +10,7 @@ const connectToDatabase = require("./config/database");
 
 // setting environment variable
 if (process.env.NODE_ENV !== "PRODUCTION") {
-  dotenv.config({ path: "server/config/config.env" });
+  require("dotenv").config({ path: "server/config/config.env" });
 }
 // creating app
 const app = express();
@@ -26,6 +26,13 @@ app.use(cookieParser());
 // setting route
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/todo", todoRoute);
+
+// For hosting
+app.use(express.static(path.join(__dirname, "../client/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../client/build/index.html"));
+});
+// end of For hosting
 
 app.listen(PORT, () => {
   console.log(`Server is listening on http://localhost:${PORT}`);
