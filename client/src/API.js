@@ -13,6 +13,15 @@ export const loginUser = async (email, password) => {
   }
 };
 
+// logout api
+export const logoutUser = async () => {
+  try {
+    return await axios.get("/api/v1/user/logout");
+  } catch (error) {
+    alert(error.response.data.message);
+  }
+};
+
 // register api
 export const registerUser = async (name, org, email, password) => {
   try {

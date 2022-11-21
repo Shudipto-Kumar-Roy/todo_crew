@@ -68,6 +68,24 @@ exports.loginUser = async (req, res, next) => {
   }
 };
 
+// logout user
+exports.logoutUser = async (req, res, next) => {
+  try {
+    res.cookie("logintoken", null, {
+      expires: new Date(Date.now()),
+      httpOnly: true,
+    });
+    res.status(200).json({
+      success: true,
+      message: "Logged Out",
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
 // auth user
 exports.authUser = async (req, res, next) => {
   try {

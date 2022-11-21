@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { todoAdd } from "../API";
+import { useNavigate } from "react-router-dom";
 import "./Todo.css";
 
 const Todo = () => {
-  // const [state, setState] = useState({
-  //   todaytask: [],
-  //   nextdaytask: {},
-  // });
-
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [designation, setDesignation] = useState("");
   const [todaytaskName, setTodayTaskName] = useState("");
@@ -60,6 +57,7 @@ const Todo = () => {
         alert("Successfully Submitted");
         setName("");
         setDesignation("");
+        navigate("/");
       }
     }
   };
